@@ -6,6 +6,8 @@ set -x
 sed -i 's/^\(deb.*\)http:\/\/archive\.ubuntu\.com\(.*\)$/\1http:\/\/ubuntu.stu.edu.tw\2/g' /etc/apt/sources.list
 apt-get update
 apt-get dist-upgrade -y
+echo "Asia/Taipei" > /etc/timezone
+cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 apt-get autoremove -y
 workaround-pam build
 
